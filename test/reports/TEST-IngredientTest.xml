@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="IngredientTest" filepath="test/models/ingredient_test.rb" skipped="0" failures="0" errors="0" tests="3" assertions="5" time="0.0019176900386810303">
+    <testcase name="test_name_must_not_be_longer_than_100_characters" lineno="17" classname="IngredientTest" assertions="2" time="0.0010489830165170133">
+    </testcase>
+    <testcase name="test_attributes" lineno="6" classname="IngredientTest" assertions="1" time="0.0003658090136013925">
+    </testcase>
+    <testcase name="test_name_must_be_present" lineno="10" classname="IngredientTest" assertions="2" time="0.0005028980085626245">
+    </testcase>
+  </testsuite>
+</testsuites>

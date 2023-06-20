@@ -1,0 +1,13 @@
+<%= form_tag(show_path, method: :get) do %>
+  <div>
+    <%= label_tag :cuisine, 'Cuisine' %>
+    <%= text_field_tag :cuisine %>
+  </div>
+
+  <div>
+    <%= label_tag :ingredient, 'Ingredient' %>
+    <%= text_field_tag :ingredient %>
+  </div>
+
+  <button name="button" type="submit">Search</button>
+<% end %>

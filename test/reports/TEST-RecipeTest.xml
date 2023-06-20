@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="RecipeTest" filepath="test/models/recipe_test.rb" skipped="0" failures="0" errors="0" tests="8" assertions="18" time="0.005283592035993934">
+    <testcase name="test_instructions_must_be_present" lineno="32" classname="RecipeTest" assertions="2" time="0.001051129016559571">
+    </testcase>
+    <testcase name="test_instructions_must_not_be_longer_than_1000_characters" lineno="39" classname="RecipeTest" assertions="2" time="0.0005835029878653586">
+    </testcase>
+    <testcase name="test_name_must_be_present" lineno="13" classname="RecipeTest" assertions="2" time="0.0006703280378133059">
+    </testcase>
+    <testcase name="test_cooking_time_must_be_present" lineno="51" classname="RecipeTest" assertions="2" time="0.0005191470263525844">
+    </testcase>
+    <testcase name="test_name_must_not_be_longer_than_100_characters" lineno="20" classname="RecipeTest" assertions="2" time="0.0005823380197398365">
+    </testcase>
+    <testcase name="test_attributes" lineno="6" classname="RecipeTest" assertions="4" time="0.0004001999623142183">
+    </testcase>
+    <testcase name="test_zero_cooking_time_is_incorrect" lineno="65" classname="RecipeTest" assertions="2" time="0.0005188569775782526">
+    </testcase>
+    <testcase name="test_negative_cooking_time_is_incorrect" lineno="58" classname="RecipeTest" assertions="2" time="0.0009580900077708066">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,31 @@
+<% if @recipes.present? %>
+<table>
+  <thead>
+    <tr>
+      <th>Name recipe</th>
+      <th>Instructions</th>
+      <th>Cooking time</th>
+      <th>Ingredients</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipes.each do |recipe| %>
+    <tr>
+      <td><%= recipe.name %></td>
+      <td><%= recipe.instructions %></td>
+      <td><%= "#{recipe.cooking_time} min" %></td>
+      <td>
+        <ul>
+          <% recipe.ingredients.each do |ingredient| %>
+            <li><%=ingredient.name%></li>
+          <% end %>
+        </ul>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<% else %>
+  <p>No recipes found</p>
+<% end %>
+

@@ -1,0 +1,2228 @@
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecipes (20160415164520)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cuisine" varchar, "name" varchar, "instructions" text, "cooking_time" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160415164520"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngredients (20160415174455)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "recipe_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_3ee351e1cd"
+FOREIGN KEY ("recipe_id")
+  REFERENCES "recipes" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_ingredients_on_recipe_id" ON "ingredients" ("recipe_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160415174455"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-06-20 09:32:54.258977"], ["updated_at", "2023-06-20 09:32:54.258977"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 06:46:32 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 06:46:32 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: m3-cblanco.dev.vhlcentral.com
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: m3-cblanco.dev.vhlcentral.com
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: m3-cblanco.dev.vhlcentral.com
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: m3-cblanco.dev.vhlcentral.com
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 06:47:02 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 06:47:02 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 06:47:32 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 06:47:32 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/" for 181.118.154.226 at 2023-06-20 06:48:23 -0400
+Cannot render console from 181.118.154.226! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 1359)
+
+
+Started GET "/show" for 181.118.154.226 at 2023-06-20 06:48:23 -0400
+Cannot render console from 181.118.154.226! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/show.html.erb:1
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 907)
+  Rendered layout layouts/application.html.erb (Duration: 165.0ms | Allocations: 46880)
+Completed 200 OK in 170ms (Views: 167.1ms | ActiveRecord: 0.1ms | Allocations: 50244)
+
+
+Started GET "/" for 181.118.154.226 at 2023-06-20 06:48:28 -0400
+Cannot render console from 181.118.154.226! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 205)
+
+
+Started GET "/show" for 181.118.154.226 at 2023-06-20 06:48:28 -0400
+Cannot render console from 181.118.154.226! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/show.html.erb:1
+  Rendered recipes/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 478)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 5600)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 5865)
+
+
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 06:48:32 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 06:48:32 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/index" for 181.118.154.226 at 2023-06-20 06:48:35 -0400
+Cannot render console from 181.118.154.226! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+Started GET "/" for 181.118.154.226 at 2023-06-20 06:48:43 -0400
+Cannot render console from 181.118.154.226! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 257)
+
+
+Started GET "/show" for 181.118.154.226 at 2023-06-20 06:48:43 -0400
+Cannot render console from 181.118.154.226! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/show.html.erb:1
+  Rendered recipes/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 528)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 5802)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 6122)
+
+
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 06:49:02 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 06:49:02 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 06:49:32 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 06:49:32 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 06:57:32 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 06:57:33 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 06:58:02 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 06:58:03 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/show" for 181.118.154.226 at 2023-06-20 06:58:08 -0400
+Cannot render console from 181.118.154.226! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 6961)
+
+
+  
+NameError (undefined local variable or method `cuisine' for #<RecipesController:0x00000000007e40>):
+  
+app/controllers/recipes_controller.rb:23:in `show'
+Started GET "/" for 181.118.154.226 at 2023-06-20 06:58:14 -0400
+Cannot render console from 181.118.154.226! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2785)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 11709)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 12776)
+
+
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 06:58:32 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 06:58:33 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 06:59:02 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 06:59:03 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 06:59:32 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 06:59:33 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:00:02 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:00:03 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:00:32 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:00:33 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:01:02 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:01:03 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:01:32 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:01:33 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:02:02 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:02:03 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:02:32 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:02:33 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/" for 186.102.85.202 at 2023-06-20 07:17:44 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 3916)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 3985)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 6387)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"recipes"}):
+    1: <%= form_with(url: { action: 'show' }, method: 'get') do |form| %>
+    2:   <%= form.label :cuisine, 'Cuisine' %>
+    3:   <%= form.text_field :cuisine %>
+    4: 
+  
+app/views/recipes/index.html.erb:1
+app/controllers/recipes_controller.rb:6:in `index'
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:18:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:18:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:18:33 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:18:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:19:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:19:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:19:33 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:19:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:20:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:20:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:20:33 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:20:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/" for 186.102.85.202 at 2023-06-20 07:20:51 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 3903)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3972)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 6374)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"recipes"}):
+    1: <%= form_with(url: { action: 'show' }, method: 'get') do |form| %>
+    2:   <%= form.label :cuisine, 'Cuisine' %>
+    3:   <%= form.text_field :cuisine %>
+    4: 
+  
+app/views/recipes/index.html.erb:1
+app/controllers/recipes_controller.rb:6:in `index'
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:21:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:21:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/" for 186.102.85.202 at 2023-06-20 07:21:20 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 2751)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 2817)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 3094)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"recipes"}):
+    1: <%= form_with(url: { action: 'show' }, method: 'get') do |form| %>
+    2:   <%= form.label :cuisine, 'Cuisine' %>
+    3:   <%= form.text_field :cuisine %>
+    4: 
+  
+app/views/recipes/index.html.erb:1
+app/controllers/recipes_controller.rb:6:in `index'
+Started GET "/show" for 186.102.85.202 at 2023-06-20 07:21:25 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/show"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:21:33 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:21:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:52 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms | Allocations: 4508)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:52 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:52 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:53 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:53 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:53 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:53 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:53 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:54 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:54 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:54 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:54 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:54 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:54 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:55 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:55 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:55 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:55 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:55 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:56 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:57 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:57 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:57 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:57 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:58 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:58 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:58 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:58 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:58 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:58 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:59 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:59 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:59 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:59 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:59 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:21:59 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:00 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:00 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:00 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:00 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:22:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:22:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:05 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:05 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:06 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:06 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:06 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:06 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:06 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:06 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:07 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:07 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:07 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:07 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:07 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:07 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:08 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:08 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:08 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:08 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:08 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:08 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:22:33 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:22:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:39 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 312)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:39 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:39 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:39 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:39 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:39 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:40 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:40 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:40 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:40 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:40 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:40 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:41 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:41 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:41 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:41 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:41 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:41 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:42 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:22:42 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:23:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:23:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:23:33 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:23:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:42 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 312)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:43 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:43 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:43 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:43 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:43 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:43 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:44 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:44 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:44 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:44 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:44 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:44 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:45 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:45 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:45 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:45 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:45 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:46 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:23:46 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+Redirected to https://m3-cblanco.dev.vhlcentral.com/show/abc/abc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:24:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:24:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:24:33 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:24:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:25:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:25:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:25:33 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:25:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:26:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:26:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:26:33 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:26:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:27:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:27:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/show/abc/abc" for 186.102.85.202 at 2023-06-20 07:27:13 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#show as HTML
+  Parameters: {"cuisine"=>"abc", "ingredient"=>"abc"}
+[31mUnpermitted parameter: :ingredient[0m
+[31mUnpermitted parameter: :cuisine[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."cuisine" = ?[0m  [["cuisine", "abc"]]
+  ↳ app/views/recipes/show.html.erb:1
+  Rendered recipes/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1175)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 10253)
+Completed 200 OK in 37ms (Views: 30.9ms | ActiveRecord: 0.4ms | Allocations: 15055)
+
+
+Started GET "/" for 186.102.85.202 at 2023-06-20 07:27:20 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 3814)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 3878)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 4237)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"recipes"}):
+    1: <%= form_with(url: { action: 'show' }, method: 'get') do |form| %>
+    2:   <%= form.label :cuisine, 'Cuisine' %>
+    3:   <%= form.text_field :cuisine %>
+    4: 
+  
+app/views/recipes/index.html.erb:1
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:27:33 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:27:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:28:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:28:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:28:33 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:28:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:29:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:29:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/" for 186.102.85.202 at 2023-06-20 07:29:17 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1278)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 1343)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2393)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"recipes"}, missing required keys: [:cuisine, :ingredient]
+Did you mean?  show_url):
+    1: <%= form_with(url: show_path, method: 'get') do |form| %>
+    2:   <%= form.label :cuisine, 'Cuisine' %>
+    3:   <%= form.text_field :cuisine %>
+    4: 
+  
+app/views/recipes/index.html.erb:1
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:29:33 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:29:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:30:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:30:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:30:33 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:30:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:31:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:31:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:31:33 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:31:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:32:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:32:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:32:33 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:32:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:33:03 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:33:04 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:33:34 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:33:34 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:34:04 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:34:05 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/" for 186.102.85.202 at 2023-06-20 07:34:23 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1688)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1757)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 4184)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"recipes"}, missing required keys: [:cuisine, :ingredient]
+Did you mean?  show_url):
+    1: <%= form_tag(show_path, method: :get) do %>
+    2:   <div>
+    3:     <%= label_tag :cuisine, 'Cuisine' %>
+    4:     <%= text_field_tag :cuisine %>
+  
+app/views/recipes/index.html.erb:1
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:34:34 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:34:35 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:35:04 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:35:05 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:35:34 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:35:35 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/" for 186.102.85.202 at 2023-06-20 07:35:53 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 596)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 9661)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 12121)
+
+
+Started GET "/show" for 186.102.85.202 at 2023-06-20 07:35:59 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/show.html.erb:1
+  Rendered recipes/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 799)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 5927)
+Completed 200 OK in 28ms (Views: 18.7ms | ActiveRecord: 0.1ms | Allocations: 8077)
+
+
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:36:04 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("cuisine", "name", "instructions", "cooking_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["cuisine", "abc"], ["name", "name_recipe"], ["instructions", "instructions_recipe"], ["cooking_time", 1], ["created_at", "2023-06-20 11:41:15.725329"], ["updated_at", "2023-06-20 11:41:15.725329"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "name_ingredient"], ["recipe_id", 1], ["created_at", "2023-06-20 11:42:07.255148"], ["updated_at", "2023-06-20 11:42:07.255148"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" ORDER BY "ingredients"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:43:04 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:43:05 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:43:34 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:43:35 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:44:04 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:45:04 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:45:05 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/" for 186.102.85.202 at 2023-06-20 07:45:08 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 479)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 9523)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 11376)
+
+
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:45:34 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:45:35 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:46:04 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:46:05 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:46:34 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:46:35 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:47:04 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:47:05 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:47:34 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:47:35 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/" for 186.102.85.202 at 2023-06-20 07:47:51 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 370)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 5707)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 6697)
+
+
+Started GET "/show?utf8=%E2%9C%93&cuisine=abc&ingredient=&button=" for 186.102.85.202 at 2023-06-20 07:47:55 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"utf8"=>"✓", "cuisine"=>"abc", "ingredient"=>"", "button"=>""}
+[31mUnpermitted parameters: :utf8, :ingredient, :button[0m
+[31mUnpermitted parameters: :utf8, :cuisine, :button[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."cuisine" = ?[0m  [["cuisine", "abc"]]
+  ↳ app/views/recipes/show.html.erb:1
+  Rendered recipes/show.html.erb within layouts/application (Duration: 8.2ms | Allocations: 6843)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 11939)
+Completed 200 OK in 18076ms (Views: 11.8ms | ActiveRecord: 0.5ms | Allocations: 71408)
+
+
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 07:48:34 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 07:48:35 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("cuisine", "name", "instructions", "cooking_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["cuisine", "Polish"], ["name", "Pierogi"], ["instructions", "instructions_recipe"], ["cooking_time", 1], ["created_at", "2023-06-20 12:08:20.928287"], ["updated_at", "2023-06-20 12:08:20.928287"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Flour"], ["recipe_id", 2], ["created_at", "2023-06-20 12:08:58.604733"], ["updated_at", "2023-06-20 12:08:58.604733"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."cuisine" = ? ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["cuisine", "Polish"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 2]]
+Started GET "/show?utf8=%E2%9C%93&cuisine=abc&ingredient=&button=" for 186.102.85.202 at 2023-06-20 08:09:47 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#show as HTML
+  Parameters: {"utf8"=>"✓", "cuisine"=>"abc", "ingredient"=>"", "button"=>""}
+[31mUnpermitted parameters: :utf8, :ingredient, :button[0m
+[31mUnpermitted parameters: :utf8, :cuisine, :button[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."cuisine" = ?[0m  [["cuisine", "abc"]]
+  ↳ app/views/recipes/show.html.erb:1
+  Rendered recipes/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 6970)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 15951)
+Completed 200 OK in 50ms (Views: 44.4ms | ActiveRecord: 0.4ms | Allocations: 20761)
+
+
+Started GET "/" for 186.102.85.202 at 2023-06-20 08:09:58 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 398)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 5525)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 5908)
+
+
+Started GET "/show?utf8=%E2%9C%93&cuisine=Polish&ingredient=&button=" for 186.102.85.202 at 2023-06-20 08:10:05 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"utf8"=>"✓", "cuisine"=>"Polish", "ingredient"=>"", "button"=>""}
+[31mUnpermitted parameters: :utf8, :ingredient, :button[0m
+[31mUnpermitted parameters: :utf8, :cuisine, :button[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."cuisine" = ?[0m  [["cuisine", "Polish"]]
+  ↳ app/views/recipes/show.html.erb:1
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 532)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 5659)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 6062)
+
+
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 08:10:05 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 08:10:06 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 08:10:35 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 08:10:36 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 08:11:05 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 08:11:06 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 08:11:35 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 08:11:36 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/show?utf8=%E2%9C%93&cuisine=Polish&ingredient=&button=" for 186.102.85.202 at 2023-06-20 08:11:40 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"utf8"=>"✓", "cuisine"=>"Polish", "ingredient"=>"", "button"=>""}
+[31mUnpermitted parameters: :utf8, :ingredient, :button[0m
+[31mUnpermitted parameters: :utf8, :cuisine, :button[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."cuisine" = ?[0m  [["cuisine", "Polish"]]
+  ↳ app/views/recipes/show.html.erb:1
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ? /* loading for inspect */ LIMIT ?[0m  [["recipe_id", 2], ["LIMIT", 11]]
+  ↳ app/views/recipes/show.html.erb:20
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ? ORDER BY "ingredients"."id" DESC LIMIT ?[0m  [["recipe_id", 2], ["LIMIT", 1]]
+  ↳ (byebug):1
+  Rendered recipes/show.html.erb within layouts/application (Duration: 69324.8ms | Allocations: 55917)
+  Rendered layout layouts/application.html.erb (Duration: 69331.7ms | Allocations: 64806)
+Completed 200 OK in 69334ms (Views: 69332.1ms | ActiveRecord: 0.9ms | Allocations: 66076)
+
+
+Started GET "/show?utf8=%E2%9C%93&cuisine=Polish&ingredient=&button=" for 186.102.85.202 at 2023-06-20 08:12:52 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"utf8"=>"✓", "cuisine"=>"Polish", "ingredient"=>"", "button"=>""}
+[31mUnpermitted parameters: :utf8, :ingredient, :button[0m
+[31mUnpermitted parameters: :utf8, :cuisine, :button[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."cuisine" = ?[0m  [["cuisine", "Polish"]]
+  ↳ app/views/recipes/show.html.erb:1
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 813)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 6087)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 7232)
+
+
+Started GET "/show?utf8=%E2%9C%93&cuisine=Polish&ingredient=&button=" for 186.102.85.202 at 2023-06-20 08:12:56 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"utf8"=>"✓", "cuisine"=>"Polish", "ingredient"=>"", "button"=>""}
+[31mUnpermitted parameters: :utf8, :ingredient, :button[0m
+[31mUnpermitted parameters: :utf8, :cuisine, :button[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."cuisine" = ?[0m  [["cuisine", "Polish"]]
+  ↳ app/views/recipes/show.html.erb:1
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 541)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 5669)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 6083)
+
+
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 08:13:05 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 08:13:06 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("cuisine", "name", "instructions", "cooking_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["cuisine", "Italian"], ["name", "Spaghetti Carbonarra"], ["instructions", "instructions_recipe"], ["cooking_time", 1], ["created_at", "2023-06-20 12:15:47.646629"], ["updated_at", "2023-06-20 12:15:47.646629"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("cuisine", "name", "instructions", "cooking_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["cuisine", "Italian"], ["name", "Pizza"], ["instructions", "instructions_recipe"], ["cooking_time", 1], ["created_at", "2023-06-20 12:16:04.784205"], ["updated_at", "2023-06-20 12:16:04.784205"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Flour"], ["recipe_id", 4], ["created_at", "2023-06-20 12:17:22.675050"], ["updated_at", "2023-06-20 12:17:22.675050"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "ingredients" ON "ingredients"."recipe_id" = "recipes"."id" WHERE "ingredients"."name" = ? /* loading for inspect */ LIMIT ?[0m  [["name", "Flour"], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" INNER JOIN "ingredients" ON "ingredients"."recipe_id" = "recipes"."id" WHERE "ingredients"."name" = ?[0m  [["name", "Flour"]]
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 08:24:07 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/show?utf8=%E2%9C%93&cuisine=Italian&ingredient=Flour&button=" for 186.102.85.202 at 2023-06-20 08:24:11 -0400
+Cannot render console from 186.102.85.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RecipesController#show as HTML
+  Parameters: {"utf8"=>"✓", "cuisine"=>"Italian", "ingredient"=>"Flour", "button"=>""}
+[31mUnpermitted parameters: :utf8, :ingredient, :button[0m
+[31mUnpermitted parameters: :utf8, :cuisine, :button[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."cuisine" = ?[0m  [["cuisine", "Italian"]]
+  ↳ app/views/recipes/show.html.erb:1
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 3]]
+  ↳ app/views/recipes/show.html.erb:19
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 4]]
+  ↳ app/views/recipes/show.html.erb:19
+  Rendered recipes/show.html.erb within layouts/application (Duration: 13.1ms | Allocations: 11912)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 20868)
+Completed 200 OK in 31ms (Views: 25.2ms | ActiveRecord: 0.9ms | Allocations: 25177)
+
+
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 08:24:36 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 08:24:37 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 08:25:06 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 08:25:07 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 08:26:06 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 08:26:07 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 08:26:36 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 08:26:37 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 08:27:06 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 08:27:07 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 08:27:36 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 08:27:37 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.250.244 at 2023-06-20 08:28:06 -0400
+Cannot render console from 10.60.250.244! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
+Started GET "/health?token=secret" for 10.60.252.243 at 2023-06-20 08:28:07 -0400
+Cannot render console from 10.60.252.243! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/health"):
+  
